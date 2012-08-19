@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ruleset SYSTEM "ruleset.dtd">
+<ruleset>
+    <title>Beispiel Regelsatz</title>
+    <description>Dieser Regelsatz zeigt, wie man Regeln für das Addon schreibt.</description>
+    <author>info@sitecheckr.de</author>
+    <rules>
+
+        <rule>
+            <title>HTML-Grundgerüst</title>
+            <description>Überprüft, dass ein standard-konformes HTML-Grundgerüst (html, head, title, body) vorhanden ist.</description>
+            <tests>
+                <test>count(/html)=1</test>
+                <test>count(/html/head)=1</test>
+                <test>count(/html/head/title)=1</test>
+                <test>count(/html/body)=1</test>
+            </tests>
+        </rule>
+        <rule>
+            <title>Deprecated Tags</title>
+            <description>u-, s-, center-, font- und strike-Tags sollten nicht mehr verwendet werden.</description>
+            <tests>
+                <test mode="forbidden">//u</test>
+                <test mode="forbidden">//s</test>
+                <test mode="forbidden">//center</test>
+                <test mode="forbidden">//font</test>
+                <test mode="forbidden">//strike</test>
+            </tests>
+        </rule>
+        <rule>
+            <title>Alternativ-Text für Bilder</title>
+            <description>Alle Bilder müssen einen Alternativ-Text haben.</description>
+            <tests>
+                <test mode="forbidden">//img[not(@alt)]</test>
+            </tests>
+        </rule>
+
+    </rules>
+</ruleset>

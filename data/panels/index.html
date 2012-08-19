@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../css/reset.css" type="text/css">
+    <link rel="stylesheet" href="../css/main.css" type="text/css">
+    <link rel="stylesheet" href="../css/panels-index.css" type="text/css">
+  </head>
+  <body>
+    
+    <header class="clearfix">
+      <h1><a href="#about" class="switchTab">SiteCheckr</a></h1>
+      <nav>
+        <ul>
+        	<li><a href="#checkCurrTab" data-l10n-id="menu.start_test">Start Test</a></li>
+            <!-- <li><a href="#about" class="btn switchTab" data-l10n-id="menu.about">About</a></li> -->
+            <li><a href="#openPreferences" data-l10n-id="menu.settings">Settings</a></li>
+            <li><a href="#openHelp" data-l10n-id="menu.help">Help</a></li>
+        </ul>
+      </nav>
+    </header>
+        
+    <section id="result" class="tab hidden">
+        <!-- content is generated -->
+    </section>
+    
+    <section id="norules" class="tab hidden">
+        <h2 data-l10n-id="norules.title">There are no rules available :(</h2>
+        <p data-l10n-id="norules.desc">Please import your own ruleset or use the default one.</p>
+        
+        <a href="#openPreferences" class="btn btn-a1" data-l10n-id="norules.settings">Open Settings</a>
+    </section>
+        
+    <section id="about" class="tab">
+        <h2 data-l10n-id="about.title">About</h2>
+        
+        <a href="#checkCurrTab" class="btn btn-a1" data-l10n-id="check_current_tab">Check current Tab</a>
+        
+        <p data-l10n-id="about.desc">
+            SiteCheckr checks your website for common mistakes.
+        </p>
+        
+        <div id="pageCannotBeChecked" class="info">
+          <h2 data-l10n-id="pageCannotBeChecked.title">This site cannot be checked :(</h2>
+          <p data-l10n-id="pageCannotBeChecked.desc"></p>
+        </div>
+    </section>
+  </body>
+</html>

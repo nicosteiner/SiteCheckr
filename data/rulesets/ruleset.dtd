@@ -1,0 +1,31 @@
+<!ELEMENT ruleset (title,description?,author?,rules)>
+
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+
+<!ELEMENT rules (rule*)>
+
+<!ELEMENT rule (title, description?, tests)>
+
+<!ELEMENT tests (test*)>
+<!ELEMENT test (#PCDATA)>
+
+<!ENTITY % PRIORITY
+  "(required|nicetohave)"
+   >
+
+<!ATTLIST rule
+    priority %PRIORITY; "required">
+     
+<!ENTITY % MODE
+  "(required|forbidden)"
+   >
+
+<!ENTITY % TYPE
+  "(xpath|css)"
+   >
+         
+<!ATTLIST test
+    type %TYPE; "xpath"
+    mode %MODE; "required">

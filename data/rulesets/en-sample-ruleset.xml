@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ruleset SYSTEM "ruleset.dtd">
+<ruleset>
+    <title>Sample Ruleset</title>
+    <description>This ruleset shows how to write rules for the addon.</description>
+    <author>info@sitecheckr.de</author>
+    <rules>
+
+        <rule>
+            <title>HTML structure</title>
+            <description>Document has to be composed of html, head (with title) and body.</description>
+            <tests>
+                <test>count(/html)=1</test>
+                <test>count(/html/head)=1</test>
+                <test>count(/html/head/title)=1</test>
+                <test>count(/html/body)=1</test>
+            </tests>
+        </rule>
+
+        <rule>
+            <title>Deprecated Tags</title>
+            <description>u-, s-, center-, font- and strike-tags are deprecated.</description>
+            <tests>
+                <test mode="forbidden">//u</test>
+                <test mode="forbidden">//s</test>
+                <test mode="forbidden">//center</test>
+                <test mode="forbidden">//font</test>
+                <test mode="forbidden">//strike</test>
+            </tests>
+        </rule>
+
+        <rule>
+            <title>Alternative text for images</title>
+            <description>All images need some alternative text.</description>
+            <tests>
+                <test mode="forbidden">//img[not(@alt)]</test>
+            </tests>
+        </rule>
+
+    </rules>
+</ruleset>

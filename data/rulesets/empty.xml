@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ruleset SYSTEM "ruleset.dtd">
+<ruleset>
+    <title>Empty Ruleset</title>
+    <description>Empty Ruleset</description>
+    <author>sebastian.stoehr@1und1.de</author>
+    
+    <rules>
+          
+    </rules>
+</ruleset>

@@ -1,0 +1,145 @@
+@import url("http://fonts.googleapis.com/css?family=Ubuntu:400,700");
+
+body {
+  width: 100%;
+  font-family: Verdana, Arial, sans serif;
+  font-size: 12px;
+  background: #FFF;
+  color: #333;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+a:link, a:visited {
+  color: #333;
+}
+
+a:hover {
+  color: #FFAE00;
+}
+
+/* HEADER */
+header {
+  border-bottom: 1px solid #A2A2A2;
+  margin: 5px 0 10px;
+  padding: 0 5px 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Ubuntu, sans-serif;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+}
+
+h1 {
+  font-size: 1.2em;
+  float: left;
+  margin: 3px 3px 5px;
+}
+
+h1 a {
+  text-decoration: none;
+}
+
+h2 {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+header nav {
+  float: right;
+}
+
+nav li {
+  padding: 3px 5px 5px;
+  margin: 0 2px;
+  display: inline-block;
+  border-bottom: 3px solid transparent;
+	
+  color: #A2A2A2;
+  text-transform: uppercase;
+	
+  font-family: Ubuntu, sans-serif;
+  font-weight: bold;
+}
+
+nav li:hover, nav li.active {
+  border-bottom-color: #333;
+  color: #333;
+}
+
+nav a {
+  color: inherit;
+  text-decoration: none;
+}
+
+nav a:hover {
+	color: inherit;
+}
+
+nav li.spacer {
+  display: block;
+}
+
+/* TABS */
+section.tab {
+  padding: 5px;
+  min-height: 200px;
+}
+
+/* BUTTON */
+.btn {
+  display: block;
+  
+  font-family: Ubuntu, sans-serif;
+  font-weight: bold;
+  
+  text-align: center;
+  
+  margin: 3px;
+  padding: 3px;
+}
+
+.btn-a1 {
+  font-size: 1.5em;
+  margin: 10px 5px;
+}
+
+/* BASIC STYLING */
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: bold;
+}
+
+code {
+  font-family: monospace;
+}
+
+/* BASIC CLASSES */
+.hidden {
+  display: none;
+}
+
+.align-left {
+  float: left;  
+}
+
+.align-right {
+  float: right;  
+}
+
+/* CLEARFIX */
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ruleset SYSTEM "ruleset.dtd">
+<ruleset>
+    <title>Demo-Ruleset</title>
+    <description>This ruleset shows how to write rules for the addon.</description>
+    <author>info@sitecheckr.de</author>
+    
+    <rules>
+          
+      <rule>
+          <title>alt-text for images</title>
+          <description><![CDATA[All img-tags need an alt-attribute.]]></description>
+          <tests>
+            <test mode="forbidden">//img[not(@alt)]</test>
+          </tests>
+      </rule>
+    
+      <!-- <rule>
+          <title>type-attribute for style- and script-tags</title>
+          <description><![CDATA[All <code>style</code>- and <code>script</code>-tags need a <code>type</code>-attribute.]]></description>
+          <tests>
+            <test mode="forbidden">//style[not(@type)]</test>
+            <test mode="forbidden">//script[not(@type)]</test>
+          </tests>
+      </rule>  -->
+      
+      <rule priority="nicetohave">
+          <title>Inline Styles</title>
+          <description><![CDATA[You should avoid inline styles]]></description>
+          <tests>
+            <test mode="forbidden"><![CDATA[//*[@style]]]></test>
+          </tests>
+      </rule>
+      
+      <rule>
+          <title><![CDATA[title Tag]]></title>
+          <description><![CDATA[The document should have a title-tag]]></description>
+          <tests>
+            <test><![CDATA[count(//html/head/title)=1]]></test>
+          </tests>
+      </rule>
+
+      <rule>
+          <title>Deprecated Tags</title>
+          <description><![CDATA[Tags like u, s, center, font or strike should be avoided.]]></description>
+          <tests>
+            <test mode="forbidden"><![CDATA[//u]]></test>
+            <test mode="forbidden"><![CDATA[//s]]></test>
+            <test mode="forbidden"><![CDATA[//center]]></test>
+            <test mode="forbidden"><![CDATA[//font]]></test>
+            <test mode="forbidden"><![CDATA[//strike]]></test>
+          </tests>
+      </rule>
+       
+      <rule priority="nicetohave">
+          <title>Semantic Tags</title>
+          <description><![CDATA[Tags like b or i should be avoided. Consider using strong or em]]></description>
+          <tests>
+            <test mode="forbidden"><![CDATA[//b]]></test>
+            <test mode="forbidden"><![CDATA[//i]]></test>
+          </tests>
+      </rule>
+    </rules>
+</ruleset>

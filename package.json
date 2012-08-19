@@ -1,0 +1,49 @@
+{
+    "name": "sitecheckr", 
+    "license": "MPL 1.1/GPL 2.0/LGPL 2.1", 
+    "author": "Sebastian Stöhr", 
+    "version": "1.1.1", 
+    "fullName": "SiteCheckr", 
+    "id": "sitecheckr@sebastianstoehr.de", 
+    "description": "Analyzes your websites with your custom ruleset.",
+    "homepage": "http://www.sitecheckr.org/",
+    "icon": "data/img/logo-48.png",
+    "icon64": "data/img/logo-64.png",
+    "preferences": [
+    {
+        "name": "ruleset",
+        "title": "Load Ruleset",
+        "type": "file"
+    },
+    {
+        "name": "openRuleset",
+        "title": "Ruleset",
+        "label": "open current",
+        "type": "control"
+    },
+    {
+        "name": "resetRuleset",
+        "title": "Ruleset",
+        "label": "use default",
+        "type": "control"
+    },
+    {
+        "name": "autoCheck",
+        "title": "Check pages on visit? (experimental)",
+        "type": "bool",
+        "value": false
+    },
+    {
+        "name": "autoCheckFilter",
+        "title": "Only check following pages on visit (when enabled):",
+        "type": "string",
+        "value": "*"
+    },
+    {
+        "name": "openHelp",
+        "title": "Help",
+        "label": "open help",
+        "type": "control"
+    }
+    ]
+}
