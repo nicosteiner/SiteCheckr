@@ -1,0 +1,15 @@
+---
+title: HTML structure
+category: examples
+---
+
+<rule>
+	<title>HTML structure</title>
+	<description>Document has to be composed of html, head (with title) and body.</description>
+	<tests>
+		<test>count(/html)=1</test>
+		<test>count(/html/head)=1</test>
+		<test>count(/html/head/title)=1</test>
+		<test>count(/html/body)=1</test>
+	</tests>
+</rule>

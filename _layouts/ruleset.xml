@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ruleset SYSTEM "ruleset.dtd">
+<ruleset>
+    <title>{{ page.title }}</title>
+    <description>{{ page.description }}</description>
+    <author>{{ page.author }}</author>
+    
+    {{ content }}
+</ruleset>

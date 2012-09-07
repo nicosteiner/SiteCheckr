@@ -1,0 +1,12 @@
+---
+title: Images need alt-attribute
+category: examples
+---
+
+<rule>
+	<title>Alternative text for images</title>
+	<description>All images need some alternative text.</description>
+	<tests>
+		<test mode="forbidden">//img[not(@alt)]</test>
+	</tests>
+</rule>
