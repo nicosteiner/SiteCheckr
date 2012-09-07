@@ -1,0 +1,397 @@
+@import url("http://fonts.googleapis.com/css?family=Ubuntu:400,700");
+
+/* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
+-------------------------------------------------------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	border: 0;
+	font-family: inherit;
+	font-size: 100%;
+	font-style: inherit;
+	font-weight: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+:focus {/* remember to define focus styles! */
+	outline: 0;
+}
+body {
+	background: #fff;
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+table {/* tables still need 'cellspacing="0"' in the markup */
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	font-weight: normal;
+	text-align: left;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+a img {
+	border: 0;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+/* 
+----------------------------------------------- */
+
+body {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 0.75em;
+	color: #333;
+	padding: 0 1em;
+}
+
+#wrap {
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+	position: relative;
+}
+
+a:link, a:visited {
+	color: #333;
+}
+
+a:hover {
+	color: #FFAE00;
+}
+
+/* HEADER */
+header {
+	margin: 1.5em 0;
+	position: relative;
+}
+
+h2.page-title {
+	text-transform: uppercase;
+	color: #A2A2A2;
+	font-size: 4em;
+}
+
+/* headlines */
+h1, h2, h3, h4, h5, h6 {
+	font-family: Ubuntu, sans-serif;
+	font-weight: bold;
+	margin: 0 0 10px 0;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+	text-decoration: none;
+}
+
+h1 {
+	font-size: 2.5em;
+	text-transform: uppercase;
+}
+
+h2 {
+	font-size: 1.5em;
+}
+
+h3 {
+	font-size: 1.3em;
+}
+
+h4 {
+	font-size: 1.1em;
+}
+
+hgroup h3, hgroup h4 {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+hgroup h4 {
+	color: #CCC;
+}
+
+/* BASICS */
+#content strong {
+	font-weight: bold;
+}
+
+#content p, #content ul, #content ol, #content dl, #content pre {
+	margin: 0 0 1.5em 0;
+	line-height: 1.5em;
+}
+
+#content ul, #content ol {
+	list-style-type: disc;
+	padding: 0 0 0 2em;
+}
+
+/* navigation */
+#main-nav {
+	margin: 0 0 1em 0;
+}
+
+#main-nav ul,
+#sub-nav ul {
+	text-align: right;
+	border-bottom: 1px solid #A2A2A2;
+}
+
+#main-nav li,
+#sub-nav li {
+	padding: 3px 5px 15px;
+	margin: 0 5px;
+	display: inline-block;
+	border-bottom: 3px solid transparent;
+	
+	color: #A2A2A2;
+	text-transform: uppercase;
+	
+	font-family: Ubuntu, sans-serif;
+	font-weight: bold;
+}
+
+#main-nav li:hover, #main-nav li.active,
+#sub-nav li:hover, #sub-nav li.active {
+	border-bottom-color: #333;
+	color: #333;
+}
+
+#main-nav a,
+#sub-nav a {
+	color: inherit;
+	text-decoration: none;
+}
+
+#main-nav a:hover,
+#sub-nav a:hover {
+	color: inherit;
+}
+
+#sub-nav ul {
+	text-align: left;
+}
+
+#sub-nav li {
+	padding-bottom: 5px;
+}
+
+#header-nav {
+	float: right;
+	margin: 0.2em 0;
+}
+
+#nav-lang {
+	float: right;
+	width: 3em;
+	height: 1.5em;
+	line-height: 1.5em;
+}
+
+#searchform {
+	float: right;
+	margin: 0 1em 0 0;
+}
+
+#searchform label {
+	display: inline-block;
+	text-indent: -1000em;
+}
+
+#searchform input {
+	float: left;
+	display: inline-block;
+	vertical-align: bottom;
+
+	border: none;
+	background-color: #ECECEC;
+	color: #333;
+	
+	height: 1.5em;
+	padding: 0.1em 2em 0.1em 0.1em;
+}
+
+#searchform input.field {
+	transition: width .5s;
+	-moz-transition: width .5s;
+	-webkit-transition: width .5s;
+	-o-transition: width .5s;
+	width: 8em;
+}
+
+#searchform input.field:focus {
+	width: 12em;
+}
+
+#searchform .submit {	
+	cursor: pointer;
+	text-indent: -1000em;
+	width: 1.8em;
+	padding: 0.1em;
+	margin: 0 0 0 -2em;
+	background: url("imgs/search.png") center center no-repeat #ECECEC;
+	background-size: 12px 12px;
+}
+
+/* SIDEBAR */
+aside {
+	margin: 30px 0 0 0;
+	padding: 30px 0 0 0;
+	border-top: 1px solid #A2A2A2;
+}
+
+aside section {
+	-moz-box-sizing: border-box;
+    box-sizing:  border-box;
+    
+	width: 33.3%;
+	float: left;
+}
+
+.widget h2 {
+	text-transform: uppercase;
+	color: #CCC;
+	font-size: 1.2em;
+}
+
+/* FOOTER */
+footer {
+	margin: 30px 0 15px 0;
+	color: #A2A2A2;
+	font-size: 0.8em;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+footer a:link, footer a:visited {
+	color: #A2A2A2;
+}
+
+footer a:hover {
+	color: #FFAE00;
+}
+
+#content ol.big {
+	list-style-type: none;
+	padding: 0 1em 0 1em;
+}
+
+#content ol.big li {
+	margin-bottom: 1em;
+	padding-bottom: 1em;
+	border-bottom: 1px solid rgba(162, 162, 162, 0.5);
+}
+
+#content ol.big li:last-of-type {
+	border-bottom: none;
+}
+
+#content ol.big strong:first-child {
+	display: block;
+}
+
+/* OTHER */
+code {
+	font-family: monospace;
+	font-size: 1.25em;
+}
+
+hr {
+	display: none;
+}
+
+#content strong.name {
+	font-weight: inherit;
+}
+
+#content dt {
+	display: inline-block;
+	width: 20%;
+	vertical-align: top;
+}
+
+#content dd {
+	display: inline-block;
+	width: 79%;
+	margin: 0 0 1em 0;
+}
+
+em.step {
+	font-style: italic;
+}
+
+/* SIDEBAR */
+.addon-details dt {
+	font-weight: bold;
+	margin: 0.2em;
+}
+
+.addon-details dt:after {
+	content: ":";
+}
+
+.addon-details dd {
+	margin: 0.2em 0.2em 0.8em;
+}
+
+ul.blogroll li {
+	margin: 0.2em 0 0.5em;
+}
+
+/* rating */
+.rating {
+	display: block;
+	text-indent: -1000em;
+	width: 80px;
+	background: url(../imgs/rating.png) left top no-repeat transparent;
+	background-size: 80px 16px;
+	height: 16px;
+}
+
+.rating0 {width: 0;}
+.rating0\.5 {width: 8px;}
+.rating1 {width: 16px;}
+.rating1\.5 {width: 24px;}
+.rating2 {width: 32px;}
+.rating2\.5 {width: 40px;}
+.rating3 {width: 48px;}
+.rating3\.5 {width: 56px;}
+.rating4 {width: 64px;}
+.rating4\.5 {width: 72px;}
+
+/* CLEARFIX */
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio : 1.5), screen and (min-device-pixel-ratio : 1.5) {
+	#searchform .submit {
+		background-image: url(../imgs/search@2x.png);
+	}
+	
+	.rating {
+		background-image: url(../imgs/rating@2x.png);
+	}
+}

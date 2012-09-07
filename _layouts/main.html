@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ page.title }} - SiteCheckr</title>
+    <link rel="stylesheet" type="text/css" href="/res/style/style.css" />
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <h1><a href="/" title="SiteCheckr">SiteCheckr</a></h1>
+            {% include header-navigation.html %}
+        </header>
+
+        <div id="content">
+            <h2 class="page-title">{{ page.title }}</h2>
+
+            {{ content }}
+
+        </div>
+    </div>
+</body>
