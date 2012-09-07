@@ -3,6 +3,7 @@
 <head>
     <title>{{ page.title }} - SiteCheckr</title>
     <link rel="stylesheet" type="text/css" href="{{ site.base }}/res/style/style.css" />
+    <meta charset="UTF-8" />
 </head>
 <body>
     <div id="wrap">
@@ -11,11 +12,22 @@
             {% include header-navigation.html %}
         </header>
 
-        <div id="content">
+        <div id="content" class="clearfix">
             <h2 class="page-title">{{ page.title }}</h2>
 
             {{ content }}
 
         </div>
+
+        <aside class="clearfix">
+            <section id="first">
+                {% include footer-links.html %}
+            </section>
+        </aside>
+
+        <footer>
+            &copy; {{ site.time | date: "%Y" }}
+            <a href="http://www.sebastianstoehr.de/" title="Sebastian Stöhr" rel="author external">Sebastian Stöhr</a> | <a href="http://fwlink.sebastianstoehr.de/impressum/" title="Impressum" rel="external">Impressum</a>
+        </footer>
     </div>
 </body>
