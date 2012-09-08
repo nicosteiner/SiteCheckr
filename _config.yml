@@ -1,3 +1,9 @@
 auto: true
 pygments: true
+
+domain: http://www.sitecheckr.org
 base: 
+
+title: SiteCheckr | Firefox Validator Addon
+description: SiteCheckr is a Firefox addon, which allows you to check your website.
+keywords: firefox, addon, sitecheckr, validator, html
