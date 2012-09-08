@@ -5,4 +5,68 @@ menu1: fileformat
 permalink: file-format/index.html
 ---
 
+<p>SiteCheckr-rulesets are saved as XML.</p>
 
+<h3>Meta-Data</h3>
+
+<p>General information about the ruleset (title, description, author). Can be displayed in future versions of SiteCheckr.</p>
+
+{% highlight xml %}
+<title>Title</title>
+<description>Description</description>
+<author>author@example.org</author>
+{% endhighlight %}
+
+<h3>Rules</h3>
+
+<p>Rules are placed in a <code>&lt;rules&gt;</code>-node.</p>
+<p>A single rule has the following structure:</p>
+
+{% highlight xml %}
+<rule priority="nicetohave">
+	<title>Title</title>
+	<description><![CDATA[ Description ]]></description>
+	<tests>
+		<test mode="forbidden" type="xpath"><![CDATA[ XPath ]]></test>
+	</tests>
+</rule>
+{% endhighlight %}
+
+<dl class="settings">
+	<dt><code>priority</code></dt>
+    <dd><p>optional, defaults to: <code>required</code></p>
+
+		<dl>
+			<dt><code>required</code></dt>
+			<dd>Rule must be fulfilled</dd>
+    
+    		<dt><code>nicetohave</code></dt>
+        	<dd>Rule should be fulfilled, but it is not necessary to get a green SiteCheckr icon.</dd>
+       </dl>
+	</dd>
+	
+	<dt><code>mode</code></dt>
+	<dd><p>optional, defaults to: <code>required</code></p>
+		
+		<dl>
+			<dt><code>required</code></dt>
+			<dd>Test must pass.</dd>
+			
+			<dt><code>forbidden</code></dt>
+			<dd> Test has to fail.</dd>
+		</dl>
+	</dd>
+       
+	<dt><code>type</code></dt>
+	<dd><p>optional, defaults to: <code>xpath</code></p>
+		
+		<dl>
+			<dt><code>xpath</code></dt>
+			<dd>Test is a XPath expression</dd>
+			
+			<dt><code>css</code></dt>
+			<dd>Test is a CSS selector</dd>
+		</dl>
+	</dd>
+
+</dl>
