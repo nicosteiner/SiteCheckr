@@ -1,0 +1,12 @@
+---
+layout: default
+---
+
+<article>
+	<h2 class="page-title">News</h2>
+	<hgroup>
+		<h3>{{page.title}}</h3>
+		<h4>{{page.date | date: '%d.%m.%Y'}}{% if page.author %} by {{page.author}}{% endif %}</h4>
+	</hgroup>
+	{{content}}
+</article>

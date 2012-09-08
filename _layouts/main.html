@@ -1,60 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>{{ page.title }}{% if site.title  %} | {{ site.title }}{% endif %}</title>
-    <link rel="stylesheet" type="text/css" href="{{ site.base }}/res/style.css" />
-    <link rel="icon" href="{{ site.base }}/res/imgs/favicon.ico" type="image/x-icon">
-    
-    <meta charset="UTF-8" />
-    
-    <meta name="viewport" content="width=device-width">
+---
+layout: default
+---
 
-	<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-	<meta name="keywords" content="{{site.keywords}}{% if page.keywords %}, {{ page.keywords }}{% endif %}">
-	
-	<meta property="og:title" content="SiteCheckr">
-	<meta property="og:type" content="website">
-	<meta property="og:url" content="{{ site.domain }}{{ site.base }}{{ page.url | replace:'index.html','' }}">
-	<meta property="og:image" content="{{ site.domain }}{{ site.base }}/res/imgs/social/preview.png">
-	<meta property="og:description" content="">
-
-	{% if page.noindex %}<meta name="robots" content="noindex">{% endif %}
-
-	<link rel="canonical" href="{{ site.domain }}{{ site.base }}{{ page.url | replace:'index.html','' }}">
-	
-{% include script.html %}
-</head>
-<body>
-    <div id="wrap">
-        <header>
-        	<div id="header-nav">
-        		<form action="{{ site.base }}/search/" id="searchform" method="get">
-        			<input type="text" placeholder="Search" id="q" name="q" class="field"><input type="submit" value="Search" id="searchsubmit" name="submit" class="submit">
-        		</form>
-        	</div>
-            <h1><a href="{{ site.base }}/" title="SiteCheckr">SiteCheckr</a></h1>
-            {% include header-navigation.html %}
-        </header>
-
-        <div id="content" class="clearfix">
-            <h2 class="page-title">{{ page.title }}</h2>
-
-            {{ content }}
-
-        </div>
-
-        <aside class="clearfix">
-            <section id="first">
-                {% include footer-about.html %}
-            </section>
-            <section id="second">
-                {% include footer-links.html %}
-            </section>
-        </aside>
-
-        <footer>
-            &copy; {{ site.time | date: "%Y" }}
-            <a href="http://www.sebastianstoehr.de/" title="Sebastian Stöhr" rel="author external">Sebastian Stöhr</a> | <a href="http://fwlink.sebastianstoehr.de/impressum/" title="Impressum" rel="external">Impressum</a>
-        </footer>
-    </div>
-</body>
+<article>
+	<h2 class="page-title">{{ page.title }}</h2>
+	{{content}}
+</article>
