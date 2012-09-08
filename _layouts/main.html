@@ -18,6 +18,8 @@
 	<meta property="og:image" content="{{ site.domain }}{{ site.base }}/res/imgs/social/preview.png">
 	<meta property="og:description" content="">
 
+	{% if page.noindex %}<meta name="robots" content="noindex">{% endif %}
+
 	<link rel="canonical" href="{{ site.domain }}{{ site.base }}{{ page.url | replace:'index.html','' }}">
 	
 {% include script.html %}
