@@ -71,7 +71,7 @@ body {
 	position: relative;
 }
 
-a:link, a:visited {
+a, a:visited {
 	color: #333;
 }
 
@@ -124,7 +124,7 @@ hgroup h3, hgroup h4 {
 	margin-right: 1em;
 }
 
-hgroup h4 {
+hgroup h4, hgroup h4 a, hgroup h4 a:visited {
 	color: #CCC;
 }
 
@@ -374,6 +374,16 @@ em.step {
 
 ul.blogroll li {
 	margin: 0.2em 0 0.5em;
+}
+
+ul.posts li {
+	margin: 0.2em 0 1em;
+}
+
+ul.posts .date {
+	font-size: 0.8em;
+	color: #CCC;
+	display: block;
 }
 
 /* rating */
