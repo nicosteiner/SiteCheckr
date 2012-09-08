@@ -19,15 +19,17 @@
 	<meta property="og:description" content="">
 
 	<link rel="canonical" href="{{ site.domain }}{{ site.base }}{{ page.url | replace:'index.html','' }}">
+	
+{% include script.html %}
 </head>
 <body>
     <div id="wrap">
         <header>
-        	<!--<div id="header-nav">
+        	<div id="header-nav">
         		<form action="{{ site.base }}/search/" id="searchform" method="get">
         			<input type="text" placeholder="Search" id="q" name="q" class="field"><input type="submit" value="Search" id="searchsubmit" name="submit" class="submit">
         		</form>
-        	</div>-->
+        	</div>
             <h1><a href="{{ site.base }}/" title="SiteCheckr">SiteCheckr</a></h1>
             {% include header-navigation.html %}
         </header>
