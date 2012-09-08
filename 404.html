@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Page Not Found</title>
+    <title>File Not Found | SiteCheckr</title>
     <link rel="stylesheet" type="text/css" href="/res/style.css" />   
     <meta charset="UTF-8" />
     
     <meta name="viewport" content="width=device-width">
 
 </head>
-<body>
+<body class="err404">
     <div id="wrap">
         <header>
             <h1><a href="/" title="SiteCheckr">SiteCheckr</a></h1>
         </header>
 
         <div id="content" class="clearfix">
-            <h2 class="page-title">404 - Page not found</h2>
+            <h2 class="page-title">404 :(</h2>
 
-            <p>We could not find the page you requested :(</p>
+            <p>We could not find the page you requested.</p>
+            <p><a href="/" title="SiteCheckr - Homepage">Return to SiteCheckr homepage</a></p>
 
+			<h3>Search</h3>
+			<form action="/search/" id="searchform" method="get">
+    			<input type="text" placeholder="Search" id="q" name="q" class="field"><input type="submit" value="Search" id="searchsubmit" name="submit" class="submit">
+    		</form>
         </div>
 
     </div>

@@ -260,6 +260,17 @@ hgroup h4 {
 	background-size: 12px 12px;
 }
 
+.err404 #searchform {
+	float: none;
+}
+
+.err404 #searchform input.field {
+	width: 20em;
+}
+
+.err404 #searchform input.field:focus {
+	width: 20em;
+}
 /* SIDEBAR */
 aside {
 	margin: 30px 0 0 0;
