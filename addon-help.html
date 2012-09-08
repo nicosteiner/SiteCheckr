@@ -1,0 +1,29 @@
+---
+layout: main
+title: Help
+permalink: addon/help/index.html
+---
+
+<h3>Quickstart</h3>
+<p>(coming soon)</p>
+
+<h3>Settings</h3>
+
+<h4>Load ruleset</h4>
+<p>Here you can import a <a href="{{ site.base }}/file-format/" title="ruleset: file format">ruleset-file</a>.
+Please check the import by clicking <em class="step">“open current”</em>.</p>
+<p><em>Please note:</em> Currently there is a bug when trying to reload a ruleset file. Please delete your existing ruleset ("use default ruleset") before reimporting it.</p>
+
+<h4>Open current ruleset</h4>
+<p>To have a look at the ruleset used for checking your websites click the <em class="step">“open current”</em>-Button.</p>
+
+<h4>Use default ruleset</h4>
+<p>Deletes (!) all imported ruleset data and imports the default ruleset file shipped with <strong class="name">SiteCheckr</strong>.</p>
+
+<h4>Check pages on visit</h4>
+<p>Enables automatic checking of websites, when you visit them. Please also adjust the following setting!</p>
+
+<h4>Only check this pages on visit</h4>
+<p>Previous setting has to be enabled!<br> List all URLs, which should be automatically checked, separated by “<code>|</code>” (e.g. <code>http://de.sitecheckr.org/*|http://en.sitecheckr.org/*</code>)<br />
+You can find information on the <a href="https://addons.mozilla.org/en-US/developers/docs/sdk/1.9/packages/api-utils/match-pattern.html" rel="external" title="Addon SDK: match-pattern">allowed pattern syntax</a> in the addon sdk docs.<br />
+Please note: Avoid checking all pages on visit (with a simple “*”) because of performance issues.</p>
