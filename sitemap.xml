@@ -1,14 +1,17 @@
 ---
+nositemap: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
     {% for item in site.pages %}
+        {% if item.noindex == null and item.nositemap == null %}
         <url> 
             <loc>{{ site.domain }}{{ site.base }}{{ item.url }}</loc> 
             <lastmod>{% if item.date %}{{ item.date | date_to_xmlschema }}{% else %}{{ site.time | date_to_xmlschema }}{% endif %}</lastmod>
             <priority>{% if item.priority %}{{ item.priority }}{% else %}0.8{% endif %}</priority>
         </url>
+        {% endif %}
     {% endfor %}
     
     <!-- NEWS -->
