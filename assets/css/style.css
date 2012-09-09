@@ -256,7 +256,7 @@ hgroup h4, hgroup h4 a, hgroup h4 a:visited {
 	width: 1.8em;
 	padding: 0.1em;
 	margin: 0 0 0 -2em;
-	background: url("imgs/search.png") center center no-repeat #ECECEC;
+	background: url("../images/search.png") center center no-repeat #ECECEC;
 	background-size: 12px 12px;
 }
 
@@ -386,27 +386,6 @@ ul.posts .date {
 	display: block;
 }
 
-/* rating */
-.rating {
-	display: block;
-	text-indent: -1000em;
-	width: 80px;
-	background: url(../imgs/rating.png) left top no-repeat transparent;
-	background-size: 80px 16px;
-	height: 16px;
-}
-
-.rating0 {width: 0;}
-.rating0\.5 {width: 8px;}
-.rating1 {width: 16px;}
-.rating1\.5 {width: 24px;}
-.rating2 {width: 32px;}
-.rating2\.5 {width: 40px;}
-.rating3 {width: 48px;}
-.rating3\.5 {width: 56px;}
-.rating4 {width: 64px;}
-.rating4\.5 {width: 72px;}
-
 /* CLEARFIX */
 .clearfix:after {
 	content: ".";
@@ -419,10 +398,7 @@ ul.posts .date {
 
 @media screen and (-webkit-min-device-pixel-ratio : 1.5), screen and (min-device-pixel-ratio : 1.5) {
 	#searchform .submit {
-		background-image: url(../imgs/search@2x.png);
+		background-image: url(../images/search@2x.png);
 	}
 	
-	.rating {
-		background-image: url(../imgs/rating@2x.png);
-	}
 }

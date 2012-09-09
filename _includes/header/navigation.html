@@ -1,0 +1,10 @@
+<nav id="main-nav">
+    <ul>
+        <li{% if page.menu1 == "home" %} class="active"{% endif %}><a href="{{ BASE_PATH }}/" title="SiteCheckr - home">home</a></li>
+        <li{% if page.menu1 == "releases" %} class="active"{% endif %}><a href="{{ BASE_PATH }}/releases/" title="release overview">releases</a></li>
+        <!--<li{% if page.menu1 == "howto" %} class="active"{% endif %}><a href="{{ BASE_PATH }}/howto/" title="how to">how to</a></li>-->
+        <li{% if page.menu1 == "fileformat" %} class="active"{% endif %}><a href="{{ BASE_PATH }}/file-format/" title="file format explained">file format</a></li>
+        <li{% if page.menu1 == "examples" %} class="active"{% endif %}><a href="{{ BASE_PATH }}/examples/" title="example rules">examples</a></li>
+        <li><a href="https://addons.mozilla.org/firefox/addon/sitecheckr/" rel="external" title="Install SiteCheckr">install</a></li>
+    </ul>
+</nav>

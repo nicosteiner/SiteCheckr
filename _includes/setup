@@ -1,0 +1,3 @@
+{% capture BASE_PATH %}{{site.base}}{% endcapture %}
+{% capture BASE_URL %}{{site.domain}}{{ BASE_PATH }}{% endcapture %}
+{% capture ASSET_PATH %}{{ BASE_PATH }}/assets{% endcapture %}

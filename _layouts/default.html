@@ -1,9 +1,11 @@
+{% include setup %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>{{ page.title }}{% if site.title  %} | {{ site.title }}{% endif %}</title>
-    <link rel="stylesheet" type="text/css" href="{{ site.base }}/res/style.css" />
-    <link rel="icon" href="{{ site.base }}/res/imgs/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{{ ASSET_PATH }}/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="{{ ASSET_PATH }}/css/syntax.css" />
+    <link rel="icon" href="{{ ASSET_PATH }}/imgages/favicon.ico" type="image/x-icon">
     
     <meta charset="UTF-8" />
     
@@ -14,26 +16,25 @@
 	
 	<meta property="og:title" content="SiteCheckr">
 	<meta property="og:type" content="website">
-	<meta property="og:url" content="{{ site.domain }}{{ site.base }}{{ page.url | replace:'index.html','' }}">
-	<meta property="og:image" content="{{ site.domain }}{{ site.base }}/res/imgs/social/preview.png">
+	<meta property="og:url" content="{{ BASE_URL }}{{ page.url | replace:'index.html','' }}">
+	<meta property="og:image" content="{{ ASSET_PATH }}/imgages/social/preview.png">
 	<meta property="og:description" content="">
 
 	{% if page.noindex %}<meta name="robots" content="noindex">{% endif %}
 
-	<link rel="canonical" href="{{ site.domain }}{{ site.base }}{{ page.url | replace:'index.html','' }}">
+	<link rel="canonical" href="{{ BASE_URL }}{{ page.url | replace:'index.html','' }}">
 	
-{% include script.html %}
 </head>
 <body>
     <div id="wrap">
         <header>
         	<div id="header-nav">
-        		<form action="{{ site.base }}/search/" id="searchform" method="get">
+        		<form action="{{ BASE_PATH}}/search/" id="searchform" method="get">
         			<input type="text" placeholder="Search" id="q" name="q" class="field"><input type="submit" value="Search" id="searchsubmit" name="submit" class="submit">
         		</form>
         	</div>
-            <h1><a href="{{ site.base }}/" title="SiteCheckr">SiteCheckr</a></h1>
-            {% include header-navigation.html %}
+            <h1><a href="{{ BASE_PATH }}/" title="SiteCheckr">SiteCheckr</a></h1>
+            {% include header/navigation.html %}
         </header>
 
         <div id="content" class="clearfix">
@@ -44,13 +45,13 @@
 
         <aside class="clearfix">
             <section id="first">
-                {% include footer-about.html %}
+                {% include footer/about.html %}
             </section>
             <section id="second">
-                {% include footer-news.html %}
+                {% include footer/news.html %}
             </section>
             <section id="third">
-                {% include footer-links.html %}
+                {% include footer/links.html %}
             </section>
         </aside>
 
@@ -59,4 +60,6 @@
             <a href="http://www.sebastianstoehr.de/" title="Sebastian Stöhr" rel="author external">Sebastian Stöhr</a> | <a href="http://fwlink.sebastianstoehr.de/impressum/" title="Impressum" rel="external">Impressum</a>
         </footer>
     </div>
+    
+    {% include tracking/ga.html %}
 </body>
