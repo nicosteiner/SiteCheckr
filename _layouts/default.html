@@ -5,7 +5,7 @@
     <title>{{ page.title }}{% if site.title  %} | {{ site.title }}{% endif %}</title>
     <link rel="stylesheet" type="text/css" href="{{ ASSET_PATH }}/css/style.css" />
     <link rel="stylesheet" type="text/css" href="{{ ASSET_PATH }}/css/syntax.css" />
-    <link rel="icon" href="{{ ASSET_PATH }}/imgages/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{{ ASSET_PATH }}/images/favicon.ico" type="image/x-icon">
     
     <meta charset="UTF-8" />
     
@@ -17,7 +17,7 @@
 	<meta property="og:title" content="SiteCheckr">
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="{{ BASE_URL }}{{ page.url | replace:'index.html','' }}">
-	<meta property="og:image" content="{{ ASSET_PATH }}/imgages/social/preview.png">
+	<meta property="og:image" content="{{ BASE_URL }}{{ ASSET_PATH }}/images/social/preview.png">
 	<meta property="og:description" content="">
 
 	{% if page.noindex %}<meta name="robots" content="noindex">{% endif %}
@@ -57,7 +57,7 @@
 
         <footer>
             &copy; {{ site.time | date: "%Y" }}
-            <a href="http://www.sebastianstoehr.de/" title="Sebastian Stöhr" rel="author external">Sebastian Stöhr</a> | <a href="http://fwlink.sebastianstoehr.de/impressum/" title="Impressum" rel="external">Impressum</a>
+            <a href="http://www.sebastianstoehr.de/" title="Sebastian Stöhr" rel="author external">Sebastian Stöhr</a> | <a href="{{ BASE_PATH }}/impressum/" title="Impressum">Impressum</a>
         </footer>
     </div>
     
