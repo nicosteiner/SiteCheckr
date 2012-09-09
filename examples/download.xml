@@ -3,7 +3,6 @@ layout: ruleset
 title: Examples
 description: Example ruleset
 author: info@sitecheckr.org
-permalink: examples/download.xml
 ---
 
 {% for post in site.categories.examples %}
