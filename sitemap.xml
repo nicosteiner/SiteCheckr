@@ -7,7 +7,7 @@ nositemap: true
     {% for item in site.pages %}
         {% if item.noindex == null and item.nositemap == null %}
         <url> 
-            <loc>{{ site.domain }}{{ site.base }}{{ item.url }}</loc> 
+            <loc>{{ site.domain }}{{ site.base }}{{ item.url | replace:'index.html', ''}}</loc> 
             <lastmod>{% if item.date %}{{ item.date | date_to_xmlschema }}{% else %}{{ site.time | date_to_xmlschema }}{% endif %}</lastmod>
             <priority>{% if item.priority %}{{ item.priority }}{% else %}0.8{% endif %}</priority>
         </url>
@@ -17,7 +17,7 @@ nositemap: true
     <!-- NEWS -->
     {% for item in site.categories.news %}
         <url> 
-            <loc>{{ site.domain }}{{ site.base }}{{ post.url }}</loc> 
+            <loc>{{ site.domain }}{{ site.base }}{{ item.url }}</loc> 
             <lastmod>{% if item.date %}{{ item.date | date_to_xmlschema }}{% else %}{{ site.time | date_to_xmlschema }}{% endif %}</lastmod>
             <priority>0.5</priority>
         </url>
