@@ -1,0 +1,14 @@
+---
+title: meta-Description
+categories: examples examples-seo
+---
+
+<rule>
+	<title>meta-description</title>
+	<description>Every website should have a meta description. The description should have less than 150 characters.</description>
+	<tests>
+		<test>count(/html/head/meta[@name="description"])=1</test>
+		<test>string-length(/html/head/meta[@name="description"]/@content)&gt;0</test>
+		<test>string-length(/html/head/meta[@name="description"]/@content)&lt;=150</test>
+	</tests>
+</rule>

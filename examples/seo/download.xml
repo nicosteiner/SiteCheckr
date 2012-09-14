@@ -1,0 +1,10 @@
+---
+layout: ruleset
+title: SEO - Best Practice
+description: Checks basic SEO requirements
+author: info@sitecheckr.org
+---
+
+{% for post in site.categories.examples-seo %}
+	{% include example/xml.xml %}
+{% endfor %}

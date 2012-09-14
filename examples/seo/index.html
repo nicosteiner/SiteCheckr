@@ -1,0 +1,23 @@
+---
+layout: page
+title: Examples
+menu1: examples
+menu2: seo
+---
+
+{% include header/navigation-sub-examples.html %}
+
+<p>You want good search engine rankings for your website? Then you should follow some basic principles of <strong><abbr title="Search engine optimization">SEO</abbr></strong>:</p>
+<ol>
+    <li>First of all you need unique and interesting content for your visitors!</li>
+    <li>You should check the validity of your <a href="{{ BASE_PATH }}/examples/" title="checking your HTML-markup">HTML markup</a>.</li>
+    <li>Control the indexing process with robots.txt and sitemap.xml.</li>
+    <li>Optimize your markup with these basic rules. Of course you can do more and add your own rules!</li>
+</ol>
+
+{% for post in site.categories.examples-seo reversed %}
+	{% include example/html.html %}
+{% endfor %}
+
+<h3>Download</h3>
+<p>You can download this example ruleset and try it yourself: <a href="{{ BASE_PATH }}/examples/seo/download.xml" title="Download example ruleset">SEO ruleset</a></p>

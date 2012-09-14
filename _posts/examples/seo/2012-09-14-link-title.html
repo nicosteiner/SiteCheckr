@@ -1,0 +1,12 @@
+---
+title: Links should have a title
+categories: examples examples-seo
+---
+
+<rule priority="nicetohave">
+	<title>Links should have a title attribute</title>
+	<description></description>
+	<tests>
+		<test mode="forbidden">//a[@href and not(@title)]</test>
+	</tests>
+</rule>

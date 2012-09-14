@@ -2,9 +2,12 @@
 layout: page
 title: Examples
 menu1: examples
+menu2: basic
 ---
 
-{% for post in site.categories.examples %}
+{% include header/navigation-sub-examples.html %}
+
+{% for post in site.categories.examples-basic reversed %}
 	{% include example/html.html %}
 {% endfor %}
 

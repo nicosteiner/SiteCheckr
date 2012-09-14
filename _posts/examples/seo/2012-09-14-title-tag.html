@@ -1,0 +1,14 @@
+---
+title: title-Tag
+categories: examples examples-seo
+---
+
+<rule>
+	<title>title-Tag</title>
+	<description>Every website needs a title-tag. It should not be longer than 65 characters.</description>
+	<tests>
+		<test>count(/html/head/title)=1</test>
+		<test>string-length(/html/head/title)&gt;0</test>
+		<test>string-length(/html/head/title)&lt;=65</test>
+	</tests>
+</rule>
