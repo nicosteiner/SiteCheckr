@@ -3,6 +3,7 @@ layout: ruleset
 title: Examples
 description: Example ruleset
 author: info@sitecheckr.org
+nositemap: true
 ---
 
 {% for post in site.categories.examples-basic %}

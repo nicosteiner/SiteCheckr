@@ -3,6 +3,7 @@ layout: ruleset
 title: SEO - Best Practice
 description: Checks basic SEO requirements
 author: info@sitecheckr.org
+nositemap: true
 ---
 
 {% for post in site.categories.examples-seo %}
