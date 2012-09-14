@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ruleset SYSTEM "ruleset.dtd">
+<ruleset>
+    <title>Suchmaschinenoptimierung - Basics</title>
+    <description>Überprüft grundlegende SEO-Anforderungen.</description>
+    <author>info@sitecheckr.de</author>
+    <rules>
+
+        <rule>
+            <title>Korrekter title-Tag vorhanden</title>
+            <description>Jede Website muss einen title besitzen. Dieser sollte max. 65 Zeichen lang sein.</description>
+            <tests>
+                <test>count(/html/head/title)=1</test>
+                <test>string-length(/html/head/title)>0</test>
+                <test>string-length(/html/head/title)&lt;=65</test>
+            </tests>
+        </rule>
+        <rule>
+            <title>Korrekte Meta-Description vorhanden</title>
+            <description>Es sollte eine Meta-Description mit max. 150 Zeichen Länge vorhanden sein.</description>
+            <tests>
+                <test>count(/html/head/meta[@name="description"])=1</test>
+                <test>string-length(/html/head/meta[@name="description"]/@content)>0</test>
+                <test>string-length(/html/head/meta[@name="description"]/@content)&lt;=150</test>
+            </tests>
+        </rule>
+        <rule>
+            <title>Alternativ-Text für Bilder</title>
+            <description>Alle Bilder müssen einen Alternativ-Text haben.</description>
+            <tests>
+                <test mode="forbidden">//img[not(@alt)]</test>
+            </tests>
+        </rule>
+        <rule priority="nicetohave">
+            <title>Links sollten ein title-Attribut haben</title>
+            <description></description>
+            <tests>
+                <test mode="forbidden">//a[@href and not(@title)]</test>
+            </tests>
+        </rule>
+    </rules>
+</ruleset>
