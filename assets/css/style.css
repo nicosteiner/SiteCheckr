@@ -396,6 +396,29 @@ ul.posts .date {
 	height: 0;
 }
 
+@media only screen and (max-width: 480px) {
+	#wrap {
+		-moz-box-sizing: border-box;
+   		box-sizing:  border-box;
+		padding: 10px;
+	}
+
+	h1 {
+		margin: 10px 0;
+	}
+
+	#main-nav li, #sub-nav li {
+		margin: 0 2px;
+		padding: 3px 1px 15px;
+	}
+
+	.sidebar section {
+		float: none;
+		width: 100%;
+		margin-bottom: 2em;
+	}
+}
+
 @media screen and (-webkit-min-device-pixel-ratio : 1.5), screen and (min-device-pixel-ratio : 1.5) {
 	#searchform .submit {
 		background-image: url(../images/search@2x.png);
