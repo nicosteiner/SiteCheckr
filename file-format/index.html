@@ -3,7 +3,7 @@ layout: page
 title: File Format
 menu1: fileformat
 ---
-
+{% include setup %}
 <p>SiteCheckr-rulesets are saved as XML.</p>
 
 <h3>Meta-Data</h3>
@@ -11,9 +11,17 @@ menu1: fileformat
 <p>General information about the ruleset (title, description, author). Can be displayed in future versions of SiteCheckr.</p>
 
 {% highlight xml %}
-<title>Title</title>
-<description>Description</description>
-<author>author@example.org</author>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ruleset SYSTEM "http://www.sitecheckr.org/dtd/1.0/sitecheckr.dtd">
+<ruleset>
+	<title>Title</title>
+	<description>Description</description>
+	<author>author@example.org</author>
+
+	<rules>
+		<!-- place rules here -->
+	</rules>
+</ruleset>
 {% endhighlight %}
 
 <h3>Rules</h3>
@@ -67,5 +75,14 @@ menu1: fileformat
 			<dd>Test is a CSS selector</dd>
 		</dl>
 	</dd>
-
 </dl>
+
+<h3>Validate your ruleset</h3>
+<p><strong class="name">SiteCheckr</strong> can't import your ruleset? Then try validating it with our <a href="{{ BASE_PATH }}/dtd/1.0/sitecheckr.dtd" title="document type definition"><abbr title="document type definition">DTD</abbr></a>.</p>
+
+<p>Add following reference to your ruleset and validate it using an online service (e.g. <a href="http://www.validome.org/xml/" rel="external" title="validate xml with dtd">Validome</a>).</p>
+
+{% highlight xml %}
+<!DOCTYPE ruleset SYSTEM "http://www.sitecheckr.org/dtd/1.0/sitecheckr.dtd">
+{% endhighlight %}
+
