@@ -5,5 +5,7 @@
     <description>{{ page.description }}</description>
     <author>{{ page.author }}</author>
     
-    {{ content }}
+    <rules>
+{{ content }}
+    </rules>
 </ruleset>
