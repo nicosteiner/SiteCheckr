@@ -9,8 +9,9 @@ var SiteCheckr = SiteCheckr || {};
 SiteCheckr.rules = SiteCheckr.rules || {};
 SiteCheckr.constants = SiteCheckr.constants || {};
 
+SiteCheckr.constants.RULETYPE = {BUILDIN: 'buildin', CUSTOM: 'custom'};
 SiteCheckr.constants.PRIORITY = {REQUIRED: 'required', NICETOHAVE: 'nicetohave'};
-SiteCheckr.constants.TYPE = {XPATH: 'xpath', CSS: 'css'};
+SiteCheckr.constants.TYPE = {XPATH: 'xpath', CSS: 'css', CUSTOM: 'custom'};
 SiteCheckr.constants.MODE = {REQUIRED: 'required', FORBIDDEN: 'forbidden'};
 
 SiteCheckr.rules.loadFromJSON = function(json) {
@@ -24,11 +25,27 @@ SiteCheckr.rules.loadRulesFromJSON = function(json) {
     for(var i=0; i<json.length; i++) {
         var tmp = json[i];
         
-        var tests = SiteCheckr.rules.loadTestsFromJSON(tmp.tests);
-        
-        rules.push(new SiteCheckr.rules.rule(tmp.title, tmp.description, tests, tmp.priority));
+        if(tmp.type == SiteCheckr.constants.RULETYPE.BUILDIN) {
+            rules.push(SiteCheckr.rules.loadBuildinRuleFromJSON(tmp));
+        } else {
+            rules.push(SiteCheckr.rules.loadCustomRuleFromJSON(tmp));
+        }
     }
     return rules;
+};
+
+SiteCheckr.rules.loadBuildinRuleFromJSON = function(json) {
+    var tests = [];
+    if(json.id && SiteCheckr.buildinRules && SiteCheckr.buildinRules[json.id]) {
+        tests.push(new SiteCheckr.buildinRules[json.id]);
+    }
+    return new SiteCheckr.rules.rule(json.title, json.description, tests, json.priority);
+};
+
+SiteCheckr.rules.loadCustomRuleFromJSON = function(json) {
+    var tests = SiteCheckr.rules.loadTestsFromJSON(json.tests);
+    
+    return new SiteCheckr.rules.rule(json.title, json.description, tests, json.priority);
 };
 
 SiteCheckr.rules.loadTestsFromJSON = function(json) {
@@ -130,6 +147,8 @@ SiteCheckr.rules.test.prototype = {
       
       if(this.type == SiteCheckr.constants.TYPE.CSS) {
           result = this.check_css(contextNode);
+      } else if(this.type == SiteCheckr.constants.TYPE.CUSTOM && this.custom_check) {
+          result = this.custom_check(contextNode);
       } else {
           result = this.check_xpath(contextNode);
       }
