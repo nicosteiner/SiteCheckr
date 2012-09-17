@@ -4,6 +4,7 @@
     <title>Demo-Ruleset</title>
     <description>This ruleset shows how to write rules for the addon.</description>
     <author>info@sitecheckr.de</author>
+    <version>1.2</version>
     
     <rules>
           
@@ -23,7 +24,10 @@
             <test mode="forbidden">//script[not(@type)]</test>
           </tests>
       </rule>  -->
-      
+      <stdrule id="duplicateId">
+          <title>Every ID has to be unique</title>
+      </stdrule>
+        
       <rule priority="nicetohave">
           <title>Inline Styles</title>
           <description><![CDATA[You should avoid inline styles]]></description>
