@@ -1,12 +1,14 @@
-<!ELEMENT ruleset (title,description?,author?,rules)>
+<!ELEMENT ruleset (title,description?,author?,version?,rules)>
 
 <!ELEMENT title (#PCDATA)>
 <!ELEMENT description (#PCDATA)>
 <!ELEMENT author (#PCDATA)>
+<!ELEMENT version (#PCDATA)>
 
-<!ELEMENT rules (rule*)>
+<!ELEMENT rules (rule|stdrule)*>
 
 <!ELEMENT rule (title, description?, tests)>
+<!ELEMENT stdrule (title, description?)>
 
 <!ELEMENT tests (test*)>
 <!ELEMENT test (#PCDATA)>
@@ -16,6 +18,10 @@
    >
 
 <!ATTLIST rule
+    priority %PRIORITY; "required">
+
+<!ATTLIST stdrule
+    id ID #REQUIRED
     priority %PRIORITY; "required">
      
 <!ENTITY % MODE
