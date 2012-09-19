@@ -11,10 +11,13 @@
 <!ELEMENT rules (rule|stdrule)*>
 
 <!ELEMENT rule (title, description?, tests)>
-<!ELEMENT stdrule (title, description?)>
+<!ELEMENT stdrule (title, description?, params?)>
 
 <!ELEMENT tests (test*)>
 <!ELEMENT test (#PCDATA)>
+
+<!ELEMENT params (param*)>
+<!ELEMENT param (#PCDATA)>
 
 <!ENTITY % PRIORITY
   "(required|nicetohave)"
@@ -26,7 +29,10 @@
 <!ATTLIST stdrule
     id ID #REQUIRED
     priority %PRIORITY; "required">
-     
+ 
+<!ATTLIST param
+    name NMTOKEN #REQUIRED>
+        
 <!ENTITY % MODE
   "(required|forbidden)"
    >
