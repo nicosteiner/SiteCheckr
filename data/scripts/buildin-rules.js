@@ -30,7 +30,7 @@ SiteCheckr.buildinRules.duplicateId.prototype = SiteCheckr.rules.test.prototype;
 SiteCheckr.buildinRules.duplicateId.prototype.custom_check = function(contextNode) {
     var result = { boolean: true, elements: [] };
 
-    var ids = {}; //store ID => #num
+    var ids = {}; //store ID => [/x/pa/th, /x/pa/th]
 
     //get all elements with an id:
     var xpath = document.evaluate('//*[@id]', contextNode, null, XPathResult.ANY_TYPE, null);
@@ -47,19 +47,33 @@ SiteCheckr.buildinRules.duplicateId.prototype.custom_check = function(contextNod
                 continue;
             }
 
-            if(ids[id] && ids[id] > 0) {
-                ids[id] += 1;
-                result.elements.push(SiteCheckr.Helper.getDOMElementAsJSON(elem));
-                result.boolean = false;
-            } else {
-                ids[id] = 1;
+            if(!ids[id]) {
+                ids[id] = [];
             }
+            
+            ids[id].push(SiteCheckr.Helper.getDOMElementAsJSON(elem));
 
             elem = xpath.iterateNext();
         }
 
         elem = null;
+        
+        for(var id in ids) {
+            if(!ids.hasOwnProperty(id)) continue;
+            
+            if(!ids[id] || ids[id].length < 2) continue;
+            
+            //there is more than one element with #id
+            //set boolean result to false
+            result.boolean = false;
+            
+            //and copy elements into result.elements
+            result.elements = result.elements.concat(ids[id]);
+        }
+        
+        ids = null;
     }
 
+    
     return result;
 };
