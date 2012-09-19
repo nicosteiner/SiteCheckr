@@ -1,5 +1,8 @@
 <!ELEMENT ruleset (title,description?,author?,version?,rules)>
 
+<!ATTLIST ruleset
+    version CDATA "1.0">
+    
 <!ELEMENT title (#PCDATA)>
 <!ELEMENT description (#PCDATA)>
 <!ELEMENT author (#PCDATA)>
