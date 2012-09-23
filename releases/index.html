@@ -5,11 +5,14 @@ menu1: releases
 ---
 
 {% for post in site.categories.releases %}
-    <hgroup class="version">
-        <h3>{{ post.title }}</h3>
-        {% if post.subtitle != "" %}
-            <h4>{{ post.subtitle }}</h4>
-        {% endif %}
-    </hgroup>
-    {{ post.content }}
+	{% capture post_id %}version-{{ post.title | replace:'.','-' }}{% endcapture %}
+    <article id="{{ post_id }}">
+    	<hgroup class="version">
+	        <h3><a href="#{{ post_id }}" title="{{ post.title }}">{{ post.title }}</a></h3>
+	        {% if post.subtitle != "" %}
+	            <h4>{{ post.subtitle }}</h4>
+	        {% endif %}
+	    </hgroup>
+    	{{ post.content }}
+    </article>
 {% endfor %}
