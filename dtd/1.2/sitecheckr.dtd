@@ -1,0 +1,46 @@
+<!ELEMENT ruleset (title,description?,author?,version?,rules)>
+
+<!ATTLIST ruleset
+    version CDATA "1.0">
+    
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT version (#PCDATA)>
+
+<!ELEMENT rules (rule|stdrule)*>
+
+<!ELEMENT rule (title, description?, tests)>
+<!ELEMENT stdrule (title, description?, params?)>
+
+<!ELEMENT tests (test*)>
+<!ELEMENT test (#PCDATA)>
+
+<!ELEMENT params (param*)>
+<!ELEMENT param (#PCDATA)>
+
+<!ENTITY % PRIORITY
+  "(required|nicetohave)"
+   >
+
+<!ATTLIST rule
+    priority %PRIORITY; "required">
+
+<!ATTLIST stdrule
+    id ID #REQUIRED
+    priority %PRIORITY; "required">
+ 
+<!ATTLIST param
+    name NMTOKEN #REQUIRED>
+        
+<!ENTITY % MODE
+  "(required|forbidden)"
+   >
+
+<!ENTITY % TYPE
+  "(xpath|css)"
+   >
+         
+<!ATTLIST test
+    type %TYPE; "xpath"
+    mode %MODE; "required">
