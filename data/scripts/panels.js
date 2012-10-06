@@ -90,6 +90,10 @@ SiteCheckr.Panel = {
                 elem.classList.add('nicetohave');
             }
             
+            var state = document.createElement('span');
+            state.classList.add('state');
+            elem.appendChild(state);
+
             /* ADD TITLE */
             var title = document.createElement('h3');
             title.appendChild(document.createTextNode(rule.title));
@@ -103,9 +107,11 @@ SiteCheckr.Panel = {
 
             if(rule.result.boolean === true) {
                 elem.classList.add('no-error');
+                state.appendChild(document.createTextNode(_('no-error')));
             } else {
                 var $elem = jQuery(elem);
                 elem.classList.add('error');
+                state.appendChild(document.createTextNode(_('error')));
                 if(rule.result.elements.length > 0) {
                     var errorElems = rule.result.elements;
                     elem.classList.add('has-details');
@@ -166,6 +172,10 @@ SiteCheckr.Panel = {
      
 };
 
+/* prepare for l10n */
+var _ = function(key) {
+	return key;
+}
 
 jQuery().ready(function() {
     SiteCheckr.Panel.init();
