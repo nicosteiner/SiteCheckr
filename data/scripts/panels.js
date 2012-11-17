@@ -121,10 +121,11 @@ SiteCheckr.Panel = {
                     list.classList.add('details');
                     for(var j=0; j<errorElems.length; j++) {
                         var errorElem = errorElems[j];
+                        var label = errorElem.custom || errorElem.html;
                         var item = document.createElement('li');
 						var $item = jQuery(item);
 
-                        item.appendChild(document.createTextNode(errorElem.html));
+                        item.appendChild(document.createTextNode(label));
                         $item.data(SiteCheckr.Panel.ERROR_DATA_ATTR, errorElem);
                         $item.click(SiteCheckr.Panel.inspectElement);
                         item.setAttribute('title', 'Inspect Element'); //TODO: gettext

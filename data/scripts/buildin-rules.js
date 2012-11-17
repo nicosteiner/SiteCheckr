@@ -37,7 +37,7 @@ SiteCheckr.buildinRules.duplicateId.prototype.custom_check = function(contextNod
     var elem = xpath.iterateNext();
     if(elem) {
 
-        var id;
+        var id, jsonelem;
 
         while(elem) {
             id = elem.id;
@@ -51,7 +51,9 @@ SiteCheckr.buildinRules.duplicateId.prototype.custom_check = function(contextNod
                 ids[id] = [];
             }
             
-            ids[id].push(SiteCheckr.Helper.getDOMElementAsJSON(elem));
+            jsonelem = SiteCheckr.Helper.getDOMElementAsJSON(elem);
+            jsonelem.custom = '#' + id;
+            ids[id].push(jsonelem);
 
             elem = xpath.iterateNext();
         }
