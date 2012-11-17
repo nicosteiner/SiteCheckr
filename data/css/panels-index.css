@@ -18,6 +18,8 @@ ul.result li span.state {
   left: 0;
   width: 15px;
   text-indent: -1000em;
+  background-repeat: no-repeat, repeat;
+  background-position: 0 2px, 0 0;
 }
 
 ul.result li h3 {
@@ -28,17 +30,18 @@ ul.result li h3 {
 
 li.no-error span.state {
   background-color: #4D680F;
-  background-image: linear-gradient(to right, #4D680F 0, #5B7D0C 100%);
+  background-image: url(../img/state/no-error.png), linear-gradient(to right, #4D680F 0, #5B7D0C 100%);
 }
 
 li.error span.state {
   background-color: #7A0627;
-  background-image: linear-gradient(to right, #7A0627 0, #8D092E 100%);
+  background-image:  url(../img/state/error.png), linear-gradient(to right, #7A0627 0, #8D092E 100%);
+  
 }
 
 li.nicetohave.error span.state {
   background-color: #F39200;
-  background-image: linear-gradient(to right, #F39200 0, #F9A423 100%);
+  background-image:  url(../img/state/nicetohave.png), linear-gradient(to right, #F39200 0, #F9A423 100%);
 }
 
 li.has-details {
