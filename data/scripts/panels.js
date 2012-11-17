@@ -90,6 +90,10 @@ SiteCheckr.Panel = {
                 elem.classList.add('nicetohave');
             }
             
+            var state = document.createElement('span');
+            state.classList.add('state');
+            elem.appendChild(state);
+
             /* ADD TITLE */
             var title = document.createElement('h3');
             title.appendChild(document.createTextNode(rule.title));
@@ -103,9 +107,11 @@ SiteCheckr.Panel = {
 
             if(rule.result.boolean === true) {
                 elem.classList.add('no-error');
+                state.appendChild(document.createTextNode(_('no-error')));
             } else {
                 var $elem = jQuery(elem);
                 elem.classList.add('error');
+                state.appendChild(document.createTextNode(_('error')));
                 if(rule.result.elements.length > 0) {
                     var errorElems = rule.result.elements;
                     elem.classList.add('has-details');
@@ -115,13 +121,14 @@ SiteCheckr.Panel = {
                     list.classList.add('details');
                     for(var j=0; j<errorElems.length; j++) {
                         var errorElem = errorElems[j];
+                        var label = errorElem.custom || errorElem.html;
                         var item = document.createElement('li');
 						var $item = jQuery(item);
 
-                        item.appendChild(document.createTextNode(errorElem.html));
+                        item.appendChild(document.createTextNode(label));
                         $item.data(SiteCheckr.Panel.ERROR_DATA_ATTR, errorElem);
                         $item.click(SiteCheckr.Panel.inspectElement);
-                        item.setAttribute('title', 'Inspect Element'); //TODO: gettext
+                        item.setAttribute('title', _('inspect'));
                         list.appendChild(item);
                     }
                     elem.appendChild(list);
@@ -166,6 +173,12 @@ SiteCheckr.Panel = {
      
 };
 
+/* prepare for l10n */
+var _ = function(key) {
+	var lang_en = { 'error': 'Errors', 'no-error': 'No errors', 'inspect': 'Inspect element'};
+	
+	return lang_en[key] || key;
+}
 
 jQuery().ready(function() {
     SiteCheckr.Panel.init();
