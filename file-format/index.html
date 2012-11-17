@@ -13,11 +13,12 @@ menu1: fileformat
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE ruleset SYSTEM "http://www.sitecheckr.org/dtd/1.0/sitecheckr.dtd">
+<!DOCTYPE ruleset SYSTEM "http://www.sitecheckr.org/dtd/1.2/sitecheckr.dtd">
 <ruleset>
 	<title>Title</title>
 	<description>Description</description>
 	<author>author@example.org</author>
+	<version>1.2</version>
 
 	<rules>
 		<!-- place rules here -->
@@ -78,12 +79,49 @@ menu1: fileformat
 	</dd>
 </dl>
 
+<h3>Buildin rules</h3>
+
+<p>Some common rules are hard to define with XPath or CSS selectors.</p>
+<p>You can use the <code>stdrule</code> tag to reference buildin rules.</p>
+
+{% highlight xml %}
+<stdrule id="ruleId">
+	<title>Title</title>
+	<description><![CDATA[ Description ]]></description>
+</stdrule>
+{% endhighlight %}
+
+<dl class="settings">
+	<dt><code>id</code></dt>
+    <dd><p>required</p>
+
+		<dl>
+			<dt><code>duplicateId</code></dt>
+			<dd>Checks for duplicate ids</dd>
+			
+			<dt><small>(more buildin rules are going to follow)</small></dt>
+       </dl>
+	</dd>
+	
+	<dt><code>priority</code></dt>
+    <dd><p>optional, defaults to: <code>required</code></p>
+
+		<dl>
+			<dt><code>required</code></dt>
+			<dd>Rule must be fulfilled</dd>
+    
+    		<dt><code>nicetohave</code></dt>
+        	<dd>Rule should be fulfilled, but it is not necessary to get a green SiteCheckr icon.</dd>
+       </dl>
+	</dd>
+</dl>
+
 <h3>Validate your ruleset</h3>
-<p><strong class="name">SiteCheckr</strong> can't import your ruleset? Then try validating it with our <a href="{{ BASE_PATH }}/dtd/1.0/sitecheckr.dtd" title="document type definition"><abbr title="document type definition">DTD</abbr></a>.</p>
+<p><strong class="name">SiteCheckr</strong> can't import your ruleset? Then try validating it with our <a href="{{ BASE_PATH }}/dtd/1.2/sitecheckr.dtd" title="document type definition"><abbr title="document type definition">DTD</abbr></a>.</p>
 
 <p>Add following reference to your ruleset and validate it using an online service (e.g. <a href="http://www.validome.org/xml/" rel="external" title="validate xml with dtd">Validome</a>).</p>
 
 {% highlight xml %}
-<!DOCTYPE ruleset SYSTEM "http://www.sitecheckr.org/dtd/1.0/sitecheckr.dtd">
+<!DOCTYPE ruleset SYSTEM "http://www.sitecheckr.org/dtd/1.2/sitecheckr.dtd">
 {% endhighlight %}
 

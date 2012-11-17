@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE ruleset SYSTEM "http://www.sitecheckr.org/dtd/1.0/sitecheckr.dtd">
+<!DOCTYPE ruleset SYSTEM "http://www.sitecheckr.org/dtd/1.2/sitecheckr.dtd">
 <ruleset>
     <title>{{ page.title }}</title>
     <description>{{ page.description }}</description>
