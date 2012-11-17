@@ -14,6 +14,5 @@ Installation
 More information
 ----------------
 
-* [Official homepage (english)](http://en.sitecheckr.org/)
-* [Official homepage (german)](http://de.sitecheckr.org/)
+* [Official homepage](http://www.sitecheckr.org/)
 * [addons.mozilla.org](https://addons.mozilla.org/firefox/addon/sitecheckr/)
