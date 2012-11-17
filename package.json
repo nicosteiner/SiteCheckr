@@ -2,7 +2,7 @@
     "name": "sitecheckr", 
     "license": "MPL 1.1/GPL 2.0/LGPL 2.1", 
     "author": "Sebastian Stöhr", 
-    "version": "1.2.0-beta", 
+    "version": "1.2.0", 
     "fullName": "SiteCheckr", 
     "id": "sitecheckr@sebastianstoehr.de", 
     "description": "Analyzes your websites with your custom ruleset.",
