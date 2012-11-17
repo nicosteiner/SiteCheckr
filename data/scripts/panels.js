@@ -128,7 +128,7 @@ SiteCheckr.Panel = {
                         item.appendChild(document.createTextNode(label));
                         $item.data(SiteCheckr.Panel.ERROR_DATA_ATTR, errorElem);
                         $item.click(SiteCheckr.Panel.inspectElement);
-                        item.setAttribute('title', 'Inspect Element'); //TODO: gettext
+                        item.setAttribute('title', _('inspect'));
                         list.appendChild(item);
                     }
                     elem.appendChild(list);
@@ -175,7 +175,9 @@ SiteCheckr.Panel = {
 
 /* prepare for l10n */
 var _ = function(key) {
-	return key;
+	var lang_en = { 'error': 'Errors', 'no-error': 'No errors', 'inspect': 'Inspect element'};
+	
+	return lang_en[key] || key;
 }
 
 jQuery().ready(function() {
