@@ -20,6 +20,13 @@
 	<meta property="og:image" content="{{ BASE_URL }}{{ ASSET_PATH }}/images/social/preview.png">
 	<meta property="og:description" content="">
 
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	{% if site.shorttitle %}<meta name="apple-mobile-web-app-title" content="{{ site.shorttitle }}" />{% endif %}
+	<link rel="apple-touch-icon" sizes="57x57" href="{{ BASE_URL }}{{ ASSET_PATH }}/images/apple/apple-touch-icon-57x57.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="{{ BASE_URL }}{{ ASSET_PATH }}/images/apple/apple-touch-icon-72x72.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="{{ BASE_URL }}{{ ASSET_PATH }}/images/apple/apple-touch-icon-114x114.png" />
+	<link rel="apple-touch-icon" sizes="144x144" href="{{ BASE_URL }}{{ ASSET_PATH }}/images/apple/apple-touch-icon-144x144.png" />
+
 	{% if page.noindex %}<meta name="robots" content="noindex">{% endif %}
 
 	<link rel="canonical" href="{{ BASE_URL }}{{ page.url | replace:'index.html','' }}">
